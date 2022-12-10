@@ -253,7 +253,8 @@ export default {
     },
     // валидация телефона
     phoneValidation() {
-      if (this.phone.length < 6 || this.phone.length > 10) {
+      let regex = /^\d+$/;
+      if (this.phone.length < 6 || this.phone.length > 10 || !this.phone.match(regex)) {
         this.phoneValidationFailed = true
       }
       else {
